@@ -1,6 +1,6 @@
 {
   "name": "console-game",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "student project console game",
   "scripts": {
     "babel-node": "babel-node",
