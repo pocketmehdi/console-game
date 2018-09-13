@@ -5,3 +5,4 @@
 [![Build Status](https://travis-ci.org/pocketmehdi/console-game.svg?branch=master)](https://travis-ci.org/pocketmehdi/console-game)
 [![asciicast](https://asciinema.org/a/B5YbBGXXxZOhSnAvJ2hCLT61h.png)](https://asciinema.org/a/B5YbBGXXxZOhSnAvJ2hCLT61h)
 [![asciicast](https://asciinema.org/a/UH7CvYFXcW0kblp8xb9pGeLQB.png)](https://asciinema.org/a/UH7CvYFXcW0kblp8xb9pGeLQB)
+[![asciicast](https://asciinema.org/a/N7M2slIIkPTXmAG7396tnqQia.png)](https://asciinema.org/a/N7M2slIIkPTXmAG7396tnqQia)
