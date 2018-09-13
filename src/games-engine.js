@@ -1,11 +1,11 @@
 import readlineSync from 'readline-sync';
 import getUserName from './index';
 
-const GENERAL_GREATING = 'Welcome to the Brain Games!';
+const generalGreating = 'Welcome to the Brain Games!';
 
-const game = (rules, getGameExpression, getCorrectAnswer) => {
-  console.log(GENERAL_GREATING);
-  console.log(rules);
+const makeGame = (rules, getGameSet) => {
+  console.log(generalGreating);
+  console.log(`${rules}\n`);
   const userName = getUserName();
 
   const singleRound = (stepNumber) => {
@@ -14,11 +14,10 @@ const game = (rules, getGameExpression, getCorrectAnswer) => {
       return;
     }
 
-    const gameExpression = getGameExpression();
-    const correctAnswer = getCorrectAnswer(gameExpression);
-    const answer = readlineSync.question(`Question: ${gameExpression} \nYour answer: `);
-    if (answer !== correctAnswer) {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}' \nLet's try again, ${userName}!`);
+    const { question, answer } = getGameSet();
+    const userAnswer = readlineSync.question(`Question: ${question} \nYour answer: `);
+    if (userAnswer !== answer) {
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${answer}' \nLet's try again, ${userName}!`);
     } else {
       console.log('Correct!');
       singleRound(stepNumber + 1);
@@ -28,4 +27,4 @@ const game = (rules, getGameExpression, getCorrectAnswer) => {
   singleRound(1);
 };
 
-export default game;
+export default makeGame;

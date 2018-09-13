@@ -1,20 +1,24 @@
-import game from '../games-engine';
-import { getRandomExpression } from '../utils';
+import makeGame from '../games-engine';
+import { getRandomNumber, getRandomOperator } from '../utils';
 
-const RULES = 'What is the result of the expression?\n';
+const rules = 'What is the result of the expression?';
 
-const getCorrectAnswer = (expr) => {
+const getGameSet = () => {
+  const x = getRandomNumber();
+  const y = getRandomNumber();
+  const operator = getRandomOperator();
   const operations = {
-    '-': (x, y) => x - y,
-    '+': (x, y) => +x + +y,
-    '*': (x, y) => x * y,
+    '-': x - y,
+    '+': x + y,
+    '*': x * y,
   };
-  const exprParts = expr.split(' ');
-  return operations[exprParts[1]](exprParts[0], exprParts[2]).toString();
+
+  return {
+    question: `${x} ${operator} ${y}`,
+    answer: operations[operator].toString(),
+  };
 };
 
-const getGameExpression = () => getRandomExpression();
-
-const calculate = () => game(RULES, getGameExpression, getCorrectAnswer);
+const calculate = () => makeGame(rules, getGameSet);
 
 export default calculate;

@@ -1,15 +1,15 @@
-import game from '../games-engine';
+import makeGame from '../games-engine';
 import { getRandomNumber } from '../utils';
 
-const RULES = 'Answer "yes" if number even otherwise answer "no".\n';
+const rules = 'Answer "yes" if number even otherwise answer "no".';
 
-const getCorrectAnswer = (number) => {
-  const answer = number % 2 === 0 ? 'yes' : 'no';
-  return answer;
+const getGameSet = () => {
+  const question = getRandomNumber();
+  const answer = question % 2 === 0 ? 'yes' : 'no';
+
+  return { question, answer };
 };
 
-const getGameExpression = () => getRandomNumber();
-
-const isEven = () => game(RULES, getGameExpression, getCorrectAnswer);
+const isEven = () => makeGame(rules, getGameSet);
 
 export default isEven;
