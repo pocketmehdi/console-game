@@ -1,8 +1,9 @@
 const getRandomNumber = () => Math.round(Math.random() * 100);
+const getRndArrIndex = length => Math.floor(Math.random() * length);
 
 const getRandomOperator = () => {
   const operators = ['-', '+', '*'];
-  const randomIndex = Math.floor(Math.random() * operators.length);
+  const randomIndex = getRndArrIndex(3);
   return operators[randomIndex];
 };
 
@@ -20,4 +21,5 @@ export {
   getRandomOperator,
   getGcd,
   ascSort,
+  getRndArrIndex,
 };
