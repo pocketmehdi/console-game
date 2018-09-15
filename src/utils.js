@@ -13,4 +13,11 @@ const getGcd = (a, b) => {
   return getGcd(b, a % b);
 };
 
-export { getRandomNumber, getRandomOperator, getGcd };
+const ascSort = arr => arr.sort((a, b) => a - b);
+
+export {
+  getRandomNumber,
+  getRandomOperator,
+  getGcd,
+  ascSort,
+};
